@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="default" extends="struts-default">
+
+		<action name="addx"
+			class="view.BookAction" method="add">
+			<result name="success">/success.jsp</result>
+			<!-- <result name="input" type="chain">index</result> -->
+		</action>
+
+		<action name="dele"
+			class="view.BookAction" method="delete">
+			<result name="success">/success.jsp</result>
+			<result name="error">/view.jsp</result>
+		</action>
+
+		<action name="viewall"
+			class="view.BookAction" method="view">
+			<result name="success" >/view.jsp</result>
+		</action>
+		
+		<action name="searchx"
+			class="view.BookAction" method="search">
+			<result name="success" >/view.jsp</result>
+		</action>
+		
+		<action name="login" class="view.UserAction" method="login">
+		  <result name="success">/Dashboard.jsp</result>
+		</action>
+		<action name="reg" class="view.UserAction" >
+	     <result name="input">/AddnewUser.jsp</result>
+		  <result name="success">/success.jsp</result>
+		</action>
+		<action name="editSearch" class="view.BookAction"  method="search">
+		  <result name="success">/EditBooks.jsp</result>
+		</action>
+			<action name="edit" class="view.BookAction"  method="update">
+		  <result name="success">/success.jsp</result>
+		</action>
+	</package>
+</struts>
